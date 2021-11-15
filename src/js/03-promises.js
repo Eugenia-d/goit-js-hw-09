@@ -29,7 +29,7 @@ formEl.addEventListener('submit', event => {
     if (index > 0) {
       promiseDelay = parseInt(delay) + index * parseInt(step);
     }
-    createPromise(index, promiseDelay)
+    createPromise(index + 1, promiseDelay)
       .then(({ position, delay }) => {
         Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
       })
