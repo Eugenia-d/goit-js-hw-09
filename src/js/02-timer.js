@@ -14,11 +14,19 @@ const options = {
 };
 flatpickr(document.getElementById('datetime-picker'), options);
 
+const input = document.getElementById('datetime-picker');
 const buttonStartEl = document.querySelector('[data-start]');
 const daysEl = document.querySelector('[data-days]');
 const hoursEl = document.querySelector('[data-hours]');
 const minutesEl = document.querySelector('[data-minutes]');
 const secondsEl = document.querySelector('[data-seconds]');
+
+flatpickr(input, options);
+
+buttonStartEl.addEventListener('click', () => {
+  buttonStartEl.disabled = true;
+  input.disabled = true;
+});
 
 buttonStartEl.disabled = true;
 let intervalId = null;
